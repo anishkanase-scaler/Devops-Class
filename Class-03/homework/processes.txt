@@ -1,0 +1,15 @@
+  PID TTY           TIME CMD
+20552 ttys000    0:01.01 -zsh
+44445 ttys001    0:00.10 /bin/zsh --login -i
+89992 ttys002    0:00.18 /bin/zsh -i
+13529 ttys003    0:00.32 /bin/zsh -il
+ 6161 ttys004    0:00.21 /bin/zsh -i
+ 6168 ttys005    0:00.24 /bin/zsh -il
+86770 ttys006    0:01.15 -zsh
+30378 ttys007    0:00.46 /bin/zsh -il
+32854 ttys011    0:00.78 /bin/zsh -il
+92434 ttys012    0:00.11 /bin/zsh -il
+ 9427 ttys013    0:00.01 /bin/bash ./homework.sh
+ 9428 ttys013    0:00.00 tee output.txt
+92662 ttys013    0:00.20 /bin/zsh -il
+94234 ttys014    0:00.41 /bin/zsh -i
