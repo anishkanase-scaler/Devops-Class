@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+
+metadata: 
+  name: nginxpod
+
+spec:
+  restartPolicy: Never
+
+  containers:
+    - name: nginx
+      image: heyyyy 
+      ports:
+      - containerPort: 8080
