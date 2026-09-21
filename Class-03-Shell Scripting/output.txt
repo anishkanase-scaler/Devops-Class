@@ -1,0 +1,4 @@
+Hostname: Anishkas-MacBook-Air.local
+Hello, ani
+Current date: Mon Sep  7 12:35:29 IST 2026
+Disk Usage:

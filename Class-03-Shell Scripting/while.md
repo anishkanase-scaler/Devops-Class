@@ -1,0 +1,1 @@
+This while loop will jus take an inout and check if its a number, if its not a number, it will give an error, and its an infinity loop which will break when the input is q, and if its a number, then it will jus return that number and continue the next iterarion. 
