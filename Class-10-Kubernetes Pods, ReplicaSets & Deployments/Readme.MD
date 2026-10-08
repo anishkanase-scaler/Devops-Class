@@ -24,3 +24,80 @@ point."
 so wihtout command and no restartPolicy: Never, this will show this error, 
 because it will keep on retrying on again and again. 
 either keep restartPolicy: never or keep cmd, without both its CrashLoopBackOff
+
+
+
+
+HOMEWORK
+01. Rolling Update
+Create Deployment
+Configure rolling update
+Perform an application update
+Verify old and new Pods
+
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
+![alt text](image-5.png)
+![alt text](image-6.png)
+![alt text](image-7.png)
+
+
+
+02. Blue-Green Deployment
+Create Blue version
+Create Green version
+Switch traffic between versions => just apply the other service. 
+Verify the active version => verify using describe, describe the service
+
+Blue-Green does not update Pods gradually. Both versions are already running. The switch happens by changing the Service selector from slot=blue to slot=green.
+![alt text](image-8.png)
+![alt text](image-9.png)
+![alt text](image-10.png)
+
+
+
+03. Canary Deployment
+Deploy stable version
+Deploy canary version
+Route a small percentage of traffic to Canary
+Verify both versions
+
+![alt text](image-11.png)
+![alt text](image-12.png)
+![alt text](image-13.png)
+![alt text](image-14.png)
+![alt text](image-15.png)
+
+
+
+04. Recreate Deployment
+Deploy the application
+Update the application
+Observe the old Pods being terminated before new Pods are created
+
+![alt text](image-19.png)
+![alt text](image-16.png)
+![alt text](image-18.png)
+![alt text](image-17.png)
+![alt text](image-20.png)
+![alt text](image-21.png)
+
+
+
+
+
+
+Task 2: Pod Lifecycle
+
+Study and demonstrate the Kubernetes Pod lifecycle.
+
+For each YAML file:
+Apply the YAML file.
+Check Pod status.
+Check Pod details.
+Capture the output.
+Add the screenshot to README.md.
+Explain what you observed.
+
+
