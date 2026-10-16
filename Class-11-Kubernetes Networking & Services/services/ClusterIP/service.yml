@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-service-clusterip
+  labels:
+    app: web-clusterip
+spec:
+  type: ClusterIP
+  selector:
+      app: web-clusterip
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 80
+      protocol: TCP
+    
+
+# 1. The Request: The Python Pod sends a network request to the Service. It targets the Service's internal IP address on port: 8080.
+
+# 2. The Intercept: The web-service-clusterip Service receives this request on port 8080.
+
+# 3. The Lookup: The Service looks at its selector (app: web-clusterip) and finds all healthy Pods wearing that exact label.
+
+# 4. The Forwarding: The Service picks one Nginx Pod, looks at its targetPort rule, and forwards the network traffic to that specific Pod's internal IP address on port 80.
+
+# 5. The Reception: The Nginx container receives the traffic on port 80, processes the webpage, and sends the response back.
+
+
+
+# Only and only the internal cluster request can access the service on port 8080, this port is hidden from external world. 
+# And then the request is forwarded to port 80, which is default where Nginx is listening. 
+# Now all pods under one service, have guranteed same labels, but they can be from different nodes,nodes doesnt matter, only labels does
+
+# Cross-Node Communication
+# Pods do not need to be on the same Node to talk to each other. A Pod on one Node can easily send a request to a Pod on a completely different Node using the ClusterIP, only under condition that both nodes are under same cluster. 
+
+# If your Backend Pod is on Node A and your Frontend Pod is on Node B, here is the exact flow:
+# 1. Backend Pod on Node A will send a request to the frontend service's clusterIP.
+# 2. Then the Node A will process the service routing rules, and determines that destination pod lives on Node B. 
+# 3. Node B receives the traffic and delivers it into the Frontend Pod.

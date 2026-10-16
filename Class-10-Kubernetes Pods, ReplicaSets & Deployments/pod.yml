@@ -2,13 +2,38 @@ apiVersion: v1
 kind: Pod
 
 metadata: 
-  name: nginxpod
+  name: nginxxpod
+  labels:
+    app: nginx
 
 spec:
-  restartPolicy: Never
+  # restartPolicy: Never
+  # If the container finishes, Kubernetes 
+  # will NOT restart that container. This doesnt mean using this line will always show completed, 
+  # it will show completed only if u have given a task (eg: command) and after that container will 
+  # show completed, wont restart.
 
   containers:
-    - name: nginx
-      image: heyyyy 
-      ports:
-      - containerPort: 8080
+  - name: nginx-container
+    image: nginx
+    command: ["sh", "-c", "while true; do sleep 3600; done"]
+    ports:
+      - containerPort: 80
+      # this is always 80, bcs Nginx always listens on port 80 inside the pod. 
+      # port-forwarding: kubectl port-forward pod/nginx-pod 8080:80 => localhost:8080 => this will make 
+      # all requests coming to 8080 transport to port 80, on which Nginx is listening.  
+ 
+
+  # containers:
+    # - name: nginx
+    #   image: nginx 
+    # - name: hello
+    #   image: abcd 
+      # - containerPort: 8080
+      # command: ["sh", "-c", "echo Hello"]
+      # "Instead of using the image's normal startup command, 
+      # run this command when the container starts."
+      # Kubernetes does not allow changing the command of an 
+      # already-created Pod. That's why it says:
+
+

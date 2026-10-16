@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: backend-rs
+  labels:
+    app: backend
+spec:
+  replicas: 3
+  selector: 
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: python:3.11-alpine
+          # command: ["python3", "-c", "print('hello')"]
+          command: ["python3", "-u", "-c", "import time; print('hello'); time.sleep(3600)"]
+          ports:
+            - containerPort: 5000

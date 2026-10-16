@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: student-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce 
+    # only one node can read or write in storage. 
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: /tmp/student-data
+    # HostPath is mentioned to get node level security 

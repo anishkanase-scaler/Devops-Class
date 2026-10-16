@@ -1,0 +1,14 @@
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+tfplan
+crash.log
+crash.*.log
+
+# Keep actual variable files out of Git.
+*.tfvars
+!terraform.tfvars.example
+
+.vscode/
+.DS_Store

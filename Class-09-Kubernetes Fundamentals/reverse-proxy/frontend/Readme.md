@@ -317,3 +317,5 @@ One subtle but very important point: **Nginx is not the backend and the frontend
 
 ![alt text](image.png)
 ![alt text](image-1.png)
+
+

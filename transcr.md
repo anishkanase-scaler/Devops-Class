@@ -1,0 +1,1 @@
+now here the trasncript for class-03, i jus want u to structure eevrything, include everything instructor said and do not remove anuyrthing and also make a .md file, so that in future transcript to structure is easier and no need to rpompt again and agian

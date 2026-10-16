@@ -1,0 +1,12 @@
+aws_region         = "ap-south-1"
+project_name       = "session19-demo"
+vpc_cidr           = "10.20.0.0/16"
+public_subnet_cidr = "10.20.1.0/24"
+instance_type      = "t3.micro"
+
+# Replace this with a globally unique S3 bucket name.
+bucket_name = "replace-with-globally-unique-bucket-name"
+
+# Optional: set both values to enable restricted SSH access.
+key_name         = null
+ssh_allowed_cidr = null
